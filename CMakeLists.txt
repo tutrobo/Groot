@@ -45,10 +45,10 @@ elseif(catkin_FOUND OR CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
   message(STATUS "----------------------")
 
   catkin_package(
-    INCLUDE_DIRS 
+    INCLUDE_DIRS
     LIBRARIES qt_node_editor
     CATKIN_DEPENDS behaviortree_cpp_v3
-    DEPENDS 
+    DEPENDS
     )
 endif()
 #############################################################
@@ -200,14 +200,13 @@ else()
     set( GROOT_LIB_DESTINATION   lib )
     set( GROOT_INC_DESTINATION   include )
     set( GROOT_BIN_DESTINATION   bin )
-    
-    INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/groot_icon.png
-			 DESTINATION share/icons/hicolor/256x256)
-			 
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/Groot.desktop
-			 DESTINATION share/applications)
-    
 endif()
+
+INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/groot_icon.png
+		 DESTINATION /usr/share/icons/hicolor/256x256)
+
+INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/Groot.desktop
+		 DESTINATION /usr/share/applications)
 
 INSTALL(TARGETS behavior_tree_editor LIBRARY DESTINATION ${GROOT_LIB_DESTINATION} )
 INSTALL(TARGETS Groot RUNTIME DESTINATION ${GROOT_BIN_DESTINATION} )

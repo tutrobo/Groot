@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Groot
-Exec=Groot
+Exec=/bin/bash -c "source /opt/ros/humble/setup.bash && ros2 run groot Groot"
 Icon=groot_icon
 Comment=Graphical Editor for BehaviorTrees
 Terminal=false
